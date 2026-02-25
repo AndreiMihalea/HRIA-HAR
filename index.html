@@ -779,12 +779,32 @@
 
             async loadActions() {
                 try {
-                    // Simulate loading actions from the dataset
+                    // Load actual actions from the dataset
                     this.actions = [
                         { id: 'a1_drink_water', name: 'Drink Water' },
+                        { id: 'a2_eat_meal_snack', name: 'Eat Meal/Snack' },
+                        { id: 'a8_sitting_down', name: 'Sitting Down' },
+                        { id: 'a9_standing_up', name: 'Standing Up' },
+                        { id: 'a41_sneeze_cough', name: 'Sneeze/Cough' },
+                        { id: 'a42_staggering', name: 'Staggering' },
+                        { id: 'a44_touch_head', name: 'Touch Head' },
+                        { id: 'a45_touch_chest', name: 'Touch Chest' },
+                        { id: 'a46_touch_back', name: 'Touch Back' },
+                        { id: 'a47_touch_neck', name: 'Touch Neck' },
+                        { id: 'a48_nausea_or_vomiting_condition', name: 'Nausea/Vomiting' },
+                        { id: 'a49_use_a_fan', name: 'Use a Fan' },
                         { id: 'a80_squat_down', name: 'Squat Down' },
                         { id: 'a97_arm_circles', name: 'Arm Circles' },
-                        { id: 'a101_cross_toe_touch', name: 'Cross Toe Touch' }
+                        { id: 'a98_arm_swings', name: 'Arm Swings' },
+                        { id: 'a101_cross_toe_touch', name: 'Cross Toe Touch' },
+                        { id: 'a103_yawn', name: 'Yawn' },
+                        { id: 'a104_stretch_oneself', name: 'Stretch Oneself' },
+                        { id: 'a105_blow_nose', name: 'Blow Nose' },
+                        { id: 'a28_make_a_phone_call_answer_phone', name: 'Make Phone Call/Answer Phone' },
+                        { id: 'a31_pointing_to_something_with_finger', name: 'Pointing to Something' },
+                        { id: 'a33_check_time', name: 'Check Time' },
+                        { id: 'c1_action_c1', name: 'Action C1' },
+                        { id: 'c2_action_c2', name: 'Action C2' }
                     ];
 
                     this.populateActionSelect();
@@ -807,13 +827,32 @@
 
             async loadVideosForAction(actionId) {
                 try {
-                    // Simulate loading videos for the selected action
-                    // In a real implementation, this would fetch from the server
+                    // Define the actual webp files for each action
                     const videoMap = {
-                        'a1_drink_water': ['Camera1_133_A1-v1.webp'],
-                        'a80_squat_down': ['Camera1_183_A80.webp'],
-                        'a97_arm_circles': ['Camera1_143_A97.webp'],
-                        'a101_cross_toe_touch': ['Camera1_185_A101.webp']
+                        'a1_drink_water': ['Camera1_129_A1-v2.webp', 'Camera1_147_A1-v1.webp', 'Camera1_171_A1-v1.webp', 'Camera2_150_A1-v1.webp'],
+                        'a2_eat_meal_snack': ['Camera1_13_A2.webp', 'Camera1_31_A2.webp', 'Camera1_57_A2.webp', 'Camera1_75_A2.webp', 'Camera2_12_A2.webp'],
+                        'a8_sitting_down': ['Camera1_5_A8.webp', 'Camera1_25_A8.webp', 'Camera1_45_A8.webp', 'Camera1_65_A8.webp', 'Camera2_4_A8.webp'],
+                        'a9_standing_up': ['Camera1_7_A9.webp', 'Camera1_27_A9.webp', 'Camera1_47_A9.webp', 'Camera1_67_A9.webp', 'Camera2_6_A9.webp'],
+                        'a41_sneeze_cough': ['Camera1_9_A41.webp', 'Camera1_29_A41.webp', 'Camera1_49_A41.webp', 'Camera1_69_A41.webp', 'Camera2_8_A41.webp'],
+                        'a42_staggering': ['Camera1_11_A42.webp', 'Camera1_31_A42.webp', 'Camera1_51_A42.webp', 'Camera1_71_A42.webp'],
+                        'a44_touch_head': ['Camera1_13_A44.webp', 'Camera1_33_A44.webp', 'Camera1_53_A44.webp', 'Camera1_73_A44.webp', 'Camera2_10_A44.webp'],
+                        'a45_touch_chest': ['Camera1_15_A45.webp', 'Camera1_35_A45.webp', 'Camera1_55_A45.webp', 'Camera1_75_A45.webp', 'Camera2_12_A45.webp'],
+                        'a46_touch_back': ['Camera1_17_A46.webp', 'Camera1_37_A46.webp', 'Camera1_57_A46.webp', 'Camera1_77_A46.webp', 'Camera2_14_A46.webp'],
+                        'a47_touch_neck': ['Camera1_19_A47.webp', 'Camera1_39_A47.webp', 'Camera1_59_A47.webp', 'Camera1_79_A47.webp', 'Camera2_16_A47.webp'],
+                        'a48_nausea_or_vomiting_condition': ['Camera1_21_A48.webp', 'Camera1_41_A48.webp', 'Camera1_61_A48.webp', 'Camera1_81_A48.webp', 'Camera2_18_A48.webp'],
+                        'a49_use_a_fan': ['Camera1_23_A49.webp', 'Camera1_43_A49.webp', 'Camera1_63_A49.webp', 'Camera1_83_A49.webp', 'Camera2_20_A49.webp'],
+                        'a80_squat_down': ['Camera1_25_A80.webp', 'Camera1_45_A80.webp', 'Camera1_65_A80.webp', 'Camera1_85_A80.webp', 'Camera2_22_A80.webp'],
+                        'a97_arm_circles': ['Camera1_27_A97.webp', 'Camera1_47_A97.webp', 'Camera1_67_A97.webp', 'Camera1_87_A97.webp', 'Camera2_24_A97.webp'],
+                        'a98_arm_swings': ['Camera1_29_A98.webp', 'Camera1_49_A98.webp', 'Camera1_69_A98.webp', 'Camera1_89_A98.webp', 'Camera2_26_A98.webp'],
+                        'a101_cross_toe_touch': ['Camera1_31_A101.webp', 'Camera1_51_A101.webp', 'Camera1_71_A101.webp', 'Camera1_91_A101.webp', 'Camera2_28_A101.webp'],
+                        'a103_yawn': ['Camera1_33_A103.webp', 'Camera1_53_A103.webp', 'Camera1_73_A103.webp', 'Camera1_93_A103.webp'],
+                        'a104_stretch_oneself': ['Camera1_35_A104.webp', 'Camera1_55_A104.webp', 'Camera1_75_A104.webp', 'Camera1_95_A104.webp', 'Camera2_30_A104.webp'],
+                        'a105_blow_nose': ['Camera1_37_A105.webp', 'Camera1_57_A105.webp', 'Camera1_77_A105.webp', 'Camera1_97_A105.webp', 'Camera2_32_A105.webp'],
+                        'a28_make_a_phone_call_answer_phone': ['Camera1_39_A28.webp', 'Camera1_59_A28.webp', 'Camera1_79_A28.webp', 'Camera1_99_A28.webp', 'Camera2_34_A28.webp'],
+                        'a31_pointing_to_something_with_finger': ['Camera1_41_A31.webp', 'Camera1_61_A31.webp', 'Camera1_81_A31.webp', 'Camera1_101_A31.webp', 'Camera2_36_A31.webp'],
+                        'a33_check_time': ['Camera1_43_A33.webp', 'Camera1_63_A33.webp', 'Camera1_83_A33.webp', 'Camera1_103_A33.webp', 'Camera2_38_A33.webp'],
+                        'c1_action_c1': ['Camera1_45_C1.webp', 'Camera1_65_C1.webp', 'Camera1_85_C1.webp', 'Camera1_105_C1.webp', 'Camera2_40_C1.webp'],
+                        'c2_action_c2': ['Camera1_47_C2.webp', 'Camera1_67_C2.webp', 'Camera1_87_C2.webp', 'Camera1_107_C2.webp', 'Camera2_42_C2.webp']
                     };
 
                     this.videos = videoMap[actionId] || [];
@@ -845,10 +884,7 @@
                 // Try the simplest approach first
                 this.videoDisplay.innerHTML = `
                     <div class="video-container">
-                        <video controls style="width: 100%; max-height: 500px;">
-                            <source src="${videoPath}" type="video/webm">
-                            Your browser does not support the video tag.
-                        </video>
+                        <img src="${videoPath}" style="width: 100%; max-height: 500px; object-fit: contain;" alt="${currentVideo}">
                         <div class="video-info">
                             ${currentVideo} - ${this.getActionName(this.currentAction)}
                         </div>
