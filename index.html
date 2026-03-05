@@ -440,12 +440,12 @@
                                 <h3>Significance</h3>
                             </div>
                             <div class="panel-content">
-                                <p>Placeholder here.</p>
+                                <p>Aligning our data collection with the NTU RGB+D standard ensures that the dataset is immediately actionable for state-of-the-art action recognition models and facilitates robust cross-domain evaluation:</p>
                                 <ul>
-                                    <li>P1</li>
-                                    <li>P2</li>
-                                    <li>P3</li>
-                                    <li>P4</li>
+                                    <li>Model Interoperability: By mimicking the skeletal structure (25 joints) and coordinate system of NTU, our data can be fed directly into established architectures like ST-GCN or 2s-AGCN without modifying the input layer.</li>
+                                    <li>Leveraging Transfer Learning: This compatibility allows us to use weights pre-trained on the millions of frames in the NTU dataset, significantly reducing training time and improving accuracy for our student-specific actions.</li>
+                                    <li>Domain Adaptation Benchmarking: Collecting data from a student environment provides a unique "real-world" test case to evaluate how models trained on controlled laboratory data generalize to different backgrounds and clothing.</li>
+                                    <li>Standardized Pre-processing: Adopting this format ensures that common data augmentation and normalization pipelines (such as joint centering and rotation) are fully compatible with our new samples.</li>
                                 </ul>
                             </div>
                         </div>
